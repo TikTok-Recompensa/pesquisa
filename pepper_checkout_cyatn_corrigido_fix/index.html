@@ -281,7 +281,9 @@
       let data = null;
       try { data = JSON.parse(raw); } catch (_) {}
       if (!response.ok || !data || !data.ok) {
-        throw new Error(data?.error || 'Não foi possível criar o PIX. Verifique o backend /api.');
+        const detail = data?.details ? ` Detalhes: ${data.details}` : '';
+        const http = data?.http_status ? ` (HTTP ${data.http_status})` : '';
+        throw new Error((data?.error || `Backend /api respondeu com erro${http}.`) + detail);
       }
       renderPix(data);
       if (data.hash) poll(data.hash);
