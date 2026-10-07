@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Dramas Clube: Plano Vitalício</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#e6ecfe;color:#353535}
+    .wrap{width:min(680px,100%);margin:0 auto;padding:18px 12px 34px}
+    .card{background:#fff;border-radius:12px;box-shadow:0 2px 14px rgba(20,30,60,.08);padding:20px;margin-bottom:12px}
+    .product{display:flex;gap:14px;align-items:center}
+    .product-icon{width:74px;height:74px;border-radius:10px;background:#109b6c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;flex:none}
+    h1{font-size:22px;margin:0 0 6px}
+    .price{font-size:30px;font-weight:800;margin:0}
+    .small{font-size:13px;color:#667085;margin-top:6px}
+    .badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#e8f7f0;color:#0e7a56;font-size:12px;font-weight:700;margin-top:8px}
+    .section-title{font-size:16px;font-weight:800;text-transform:uppercase;margin:0 0 14px}
+    label{display:block;font-size:12px;font-weight:800;text-transform:uppercase;color:#555;margin:12px 0 7px}
+    input{width:100%;padding:13px 14px;border:1px solid #d0d5dd;border-radius:9px;font-size:16px;outline:none}
+    input:focus{border-color:#109b6c;box-shadow:0 0 0 3px rgba(16,155,108,.12)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .pix-method{border:2px solid #109b6c;background:#f5fbf8;border-radius:10px;padding:14px;font-weight:800;display:flex;align-items:center;gap:10px}
+    .pix-icon{width:28px;height:28px;border-radius:7px;background:#109b6c;color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
+    .btn{width:100%;border:0;border-radius:9px;background:#109b6c;color:#fff;padding:15px 18px;font-size:17px;font-weight:800;cursor:pointer;margin-top:16px}
+    .btn:disabled{opacity:.65;cursor:wait}
+    .secure{text-align:center;font-size:12px;color:#8794b9;margin-top:13px}
+    #result{display:none}
+    #qr{display:flex;justify-content:center;align-items:center;margin:14px 0}
+    #qr img{width:min(280px,80vw);height:auto;border-radius:10px;background:#fff;padding:10px;border:1px solid #e5e7eb}
+    textarea{width:100%;min-height:110px;border:1px solid #d0d5dd;border-radius:9px;padding:12px;font-size:13px;resize:vertical}
+    .copy{width:100%;border:0;border-radius:9px;background:#111827;color:#fff;padding:13px 15px;font-weight:800;cursor:pointer;margin-top:10px}
+    .status{font-weight:700;margin-top:8px}
+    .ok{color:#0e7a56}.err{color:#b42318}
+    .notice{padding:12px;border-radius:9px;background:#f8fafc;color:#475467;font-size:13px;line-height:1.5}
+    .field-help{font-size:11px;color:#667085;margin-top:5px;line-height:1.35}
+    .field-error{min-height:16px;color:#b42318;font-size:11px;font-weight:600;margin-top:5px;line-height:1.35}
+    input.invalid{border-color:#f04438;box-shadow:0 0 0 3px rgba(240,68,56,.10)}
+    input.valid{border-color:#109b6c}
+    @media(max-width:560px){.row{grid-template-columns:1fr}.wrap{padding-top:10px}.card{padding:16px}.price{font-size:27px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="product">
+        <div class="product-icon">D</div>
+        <div>
+          <h1>Dramas Clube: Plano Vitalício</h1>
+          <p class="price">R$ 61,90</p>
+          <div class="badge">PIX • cobrança semanal • até cancelar</div>
+        </div>
+      </div>
+      <p class="small">Plano Pepper: <strong>cyatn</strong> • Produto Pepper: <strong>puyx0gjeg1</strong></p>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">1 • Dados pessoais</h2>
+      <label for="name">Nome completo</label>
+      <input id="name" autocomplete="name" placeholder="Digite seu nome completo" maxlength="100">
+      <div id="nameError" class="field-error" aria-live="polite"></div>
+
+      <label for="email">Seu e-mail</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="Digite seu e-mail" maxlength="160">
+      <div id="emailError" class="field-error" aria-live="polite"></div>
+
+      <div class="row">
+        <div>
+          <label for="phone_number">Celular com WhatsApp</label>
+          <input id="phone_number" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(11) 99999-9999" maxlength="15"
+                 aria-describedby="phoneHelp phoneError">
+          <div id="phoneHelp" class="field-help">Somente números. Ex.: (11) 99999-9999</div>
+          <div id="phoneError" class="field-error" aria-live="polite"></div>
+        </div>
+        <div>
+          <label for="document">CPF</label>
+          <input id="document" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14"
+                 aria-describedby="cpfHelp documentError">
+          <div id="cpfHelp" class="field-help">Somente números. O CPF também será validado.</div>
+          <div id="documentError" class="field-error" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">2 • Pagamento</h2>
+      <div class="pix-method"><div class="pix-icon">PIX</div><div>PIX — somente este método</div></div>
+      <div class="notice" style="margin-top:12px">Ao gerar o PIX, esta compra será vinculada ao plano <strong>cyatn</strong>, configurado na Pepper como <strong>R$ 61,90 por semana</strong>, com novas cobranças até o cliente cancelar.</div>
+      <button class="btn" id="generate">GERAR PIX</button>
+      <div class="secure">Ambiente criptografado e 100% seguro.</div>
+    </section>
+
+    <section class="card" id="result">
+      <h2 class="section-title">PIX para pagamento</h2>
+      <div id="qr"></div>
+      <div id="status" class="status">Criando PIX…</div>
+      <label for="pixCode">PIX Copia e Cola</label>
+      <textarea id="pixCode" readonly></textarea>
+      <button class="copy" id="copy">COPIAR PIX</button>
+    </section>
+  </main>
+
+<script>
+(() => {
+  const CONFIG = {
+    apiBase: './api',
+    productHash: 'puyx0gjeg1',
+    offerHash: 'cyatn',
+    amountCents: 6190,
+    interval: 'weekly',
+    paymentMethod: 'pix'
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const result = $('result');
+  const status = $('status');
+  const button = $('generate');
+
+  function setStatus(text, kind='') {
+    status.textContent = text;
+    status.className = 'status ' + kind;
+  }
+
+  function value(id) { return String($(id)?.value || '').trim(); }
+
+  function digitsOnly(input) {
+    input.value = input.value.replace(/\D/g, '');
+  }
+
+  function formatPhone(value) {
+    const d = value.replace(/\D/g, '').slice(0, 11);
+    if (d.length <= 2) return d ? '(' + d : '';
+    if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+    return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  }
+
+  function formatCPF(value) {
+    const d = value.replace(/\D/g, '').slice(0, 11);
+    if (d.length <= 3) return d;
+    if (d.length <= 6) return d.slice(0, 3) + '.' + d.slice(3);
+    if (d.length <= 9) return d.slice(0, 3) + '.' + d.slice(3, 6) + '.' + d.slice(6);
+    return d.slice(0, 3) + '.' + d.slice(3, 6) + '.' + d.slice(6, 9) + '-' + d.slice(9);
+  }
+
+  function clearFieldState(id, errorId) {
+    const el = $(id);
+    const err = $(errorId);
+    el.classList.remove('invalid', 'valid');
+    if (err) err.textContent = '';
+  }
+
+  function setFieldError(id, errorId, message) {
+    const el = $(id);
+    const err = $(errorId);
+    el.classList.add('invalid');
+    el.classList.remove('valid');
+    if (err) err.textContent = message;
+    return false;
+  }
+
+  function setFieldValid(id, errorId) {
+    const el = $(id);
+    const err = $(errorId);
+    el.classList.add('valid');
+    el.classList.remove('invalid');
+    if (err) err.textContent = '';
+    return true;
+  }
+
+  function validateName() {
+    const raw = value('name').replace(/\s+/g, ' ');
+    $('name').value = raw;
+    if (!raw) return setFieldError('name', 'nameError', 'Digite seu nome completo.');
+    if (raw.length < 5) return setFieldError('name', 'nameError', 'Digite nome e sobrenome.');
+    if (/[0-9]/.test(raw)) return setFieldError('name', 'nameError', 'Use apenas letras, espaços e acentos no nome.');
+    const words = raw.split(' ').filter(Boolean);
+    if (words.length < 2) return setFieldError('name', 'nameError', 'Digite pelo menos nome e sobrenome.');
+    if (![...raw].some(ch => /[A-Za-zÀ-ÿ]/.test(ch))) return setFieldError('name', 'nameError', 'Digite um nome válido.');
+    return setFieldValid('name', 'nameError');
+  }
+
+  function validateEmail() {
+    const email = value('email');
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email) && !/[\s]/.test(email);
+    if (!email) return setFieldError('email', 'emailError', 'Digite seu e-mail.');
+    if (!ok) return setFieldError('email', 'emailError', 'Digite um e-mail válido.');
+    return setFieldValid('email', 'emailError');
+  }
+
+  function validatePhone() {
+    const phone = value('phone_number').replace(/\D/g, '');
+    if (!phone) return setFieldError('phone_number', 'phoneError', 'Digite seu celular com WhatsApp.');
+    if (phone.length !== 10 && phone.length !== 11) return setFieldError('phone_number', 'phoneError', 'Use DDD + número (10 ou 11 dígitos).');
+    const ddd = Number(phone.slice(0, 2));
+    if (ddd < 11 || ddd > 99) return setFieldError('phone_number', 'phoneError', 'Digite um DDD válido.');
+    if (/^(\d)\1+$/.test(phone)) return setFieldError('phone_number', 'phoneError', 'Digite um número de celular válido.');
+    return setFieldValid('phone_number', 'phoneError');
+  }
+
+  function validateCPF() {
+    const cpf = value('document').replace(/\D/g, '');
+    if (!cpf) return setFieldError('document', 'documentError', 'Digite seu CPF.');
+    if (cpf.length !== 11) return setFieldError('document', 'documentError', 'O CPF deve ter 11 dígitos.');
+    if (/^(\d)\1+$/.test(cpf)) return setFieldError('document', 'documentError', 'Digite um CPF válido.');
+
+    let sum = 0;
+    for (let i = 0; i < 9; i++) sum += Number(cpf[i]) * (10 - i);
+    let check = (sum * 10) % 11;
+    if (check === 10) check = 0;
+    if (check !== Number(cpf[9])) return setFieldError('document', 'documentError', 'CPF inválido.');
+
+    sum = 0;
+    for (let i = 0; i < 10; i++) sum += Number(cpf[i]) * (11 - i);
+    check = (sum * 10) % 11;
+    if (check === 10) check = 0;
+    if (check !== Number(cpf[10])) return setFieldError('document', 'documentError', 'CPF inválido.');
+
+    return setFieldValid('document', 'documentError');
+  }
+
+  function valid() {
+    const checks = [validateName(), validateEmail(), validatePhone(), validateCPF()];
+    if (checks.every(Boolean)) return true;
+    result.style.display = 'block';
+    setStatus('Revise os campos destacados e tente novamente.', 'err');
+    const firstInvalid = document.querySelector('input.invalid');
+    if (firstInvalid) firstInvalid.focus();
+    return false;
+  }
+
+  function renderPix(data) {
+    const code = data.pix_qr_code || data.pix?.code || '';
+    const qrUrl = data.pix_url || data.pix?.url || '';
+    const b64 = data.qr_code_base64 || data.pix?.qr_code_base64 || '';
+
+    $('pixCode').value = code;
+    $('qr').innerHTML = '';
+    const img = document.createElement('img');
+    img.alt = 'QR Code PIX';
+
+    if (b64) {
+      img.src = b64.startsWith('data:') ? b64 : 'data:image/png;base64,' + b64;
+      $('qr').appendChild(img);
+    } else if (qrUrl) {
+      img.src = qrUrl;
+      img.onload = () => $('qr').appendChild(img);
+    }
+
+    setStatus('Aguardando o pagamento de R$ 61,90…');
+  }
+
+  async function createPix() {
+    if (!valid()) return;
+    result.style.display = 'block';
+    result.scrollIntoView({behavior:'smooth', block:'center'});
+    button.disabled = true;
+    button.textContent = 'GERANDO PIX...';
+    setStatus('Criando PIX…');
+
+    const payload = {
+      product_hash: CONFIG.productHash,
+      offer_hash: CONFIG.offerHash,
+      amount: CONFIG.amountCents,
+      payment_method: CONFIG.paymentMethod,
+      interval: CONFIG.interval,
+      name: value('name'),
+      email: value('email'),
+      phone_number: value('phone_number'),
+      document: value('document')
+    };
+
+    try {
+      const response = await fetch(CONFIG.apiBase + '/create-pix.php', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const raw = await response.text();
+      let data = null;
+      try { data = JSON.parse(raw); } catch (_) {}
+      if (!response.ok || !data || !data.ok) {
+        throw new Error(data?.error || 'Não foi possível criar o PIX. Verifique o backend /api.');
+      }
+      renderPix(data);
+      if (data.hash) poll(data.hash);
+    } catch (err) {
+      setStatus(err?.message || 'Falha ao gerar o PIX.', 'err');
+    } finally {
+      button.disabled = false;
+      button.textContent = 'GERAR PIX';
+    }
+  }
+
+  async function poll(hash) {
+    let tries = 0;
+    const max = 180;
+    const check = async () => {
+      tries++;
+      try {
+        const r = await fetch(CONFIG.apiBase + '/transaction-status.php?hash=' + encodeURIComponent(hash), {headers:{'Accept':'application/json'}});
+        const d = await r.json();
+        const s = d.payment_status || d.transaction?.payment_status || d.transaction?.status;
+        if (s === 'paid' || s === 'approved' || s === 'active') {
+          setStatus('Pagamento confirmado!', 'ok');
+          return;
+        }
+      } catch (_) {}
+      if (tries < max) setTimeout(check, 5000);
+    };
+    check();
+  }
+
+  $('name').addEventListener('input', () => {
+    $('name').value = $('name').value.replace(/\s+/g, ' ').slice(0, 100);
+    clearFieldState('name', 'nameError');
+  });
+  $('name').addEventListener('blur', validateName);
+
+  $('email').addEventListener('input', () => {
+    clearFieldState('email', 'emailError');
+  });
+  $('email').addEventListener('blur', validateEmail);
+
+  $('phone_number').addEventListener('input', () => {
+    $('phone_number').value = formatPhone($('phone_number').value);
+    clearFieldState('phone_number', 'phoneError');
+  });
+  $('phone_number').addEventListener('blur', validatePhone);
+
+  $('document').addEventListener('input', () => {
+    $('document').value = formatCPF($('document').value);
+    clearFieldState('document', 'documentError');
+  });
+  $('document').addEventListener('blur', validateCPF);
+
+  $('copy').addEventListener('click', async () => {
+    const code = $('pixCode').value;
+    if (!code) return;
+    try {
+      await navigator.clipboard.writeText(code);
+      $('copy').textContent = 'PIX COPIADO';
+      setTimeout(() => $('copy').textContent = 'COPIAR PIX', 1400);
+    } catch (_) {
+      $('pixCode').focus();
+      $('pixCode').select();
+      document.execCommand('copy');
+    }
+  });
+
+  button.addEventListener('click', createPix);
+})();
+</script>
+</body>
+</html>
